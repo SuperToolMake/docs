@@ -11,32 +11,32 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: 'Build on your own data',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Connect PostgreSQL, MySQL or SQL Server, plus REST APIs and other
+        datasources, then build forms and apps directly on top of them.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Lightweight by design',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        A lean fork of Budibase with a memory footprint under 0.5GB — it runs
+        comfortably on a 1GB box, where other platforms want 6–8GB.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Access control built in',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Protect every screen, table and query with role based access control,
+        using built-in roles or your own custom roles.
       </>
     ),
   },

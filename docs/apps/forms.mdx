@@ -1,0 +1,60 @@
+---
+sidebar_position: 4
+title: Forms
+---
+
+# Forms
+
+Forms collect input from end users and write it back to your data. They're the core of
+most internal tools — creating records, editing them, and capturing submissions.
+
+## Form vs Form Block
+
+- **Form Block** — a pre-assembled form wired to a data source. Choose a table and an
+  action type (Create, Update, or View) and it generates the fields for you. This is
+  the quickest way to build a form.
+- **Form** — a lower-level container you fill with individual field components for full
+  control over layout and behaviour.
+
+For multi-page input, use the **Multi-step Form Block**, which splits a form into
+sequential steps.
+
+## Field components
+
+Inside a form you place field components, each bound to a column in your table:
+
+| Field | Use for |
+| --- | --- |
+| **Text Field** / **Long Form Field** | Short and multi-line text. |
+| **Number Field** / **BigInt Field** | Numeric input. |
+| **Checkbox** | Boolean values. |
+| **Date Picker** / **Date Range** | Dates and date ranges. |
+| **Options Picker** | A single choice from a list. |
+| **Multi-select Picker** | Multiple choices from a list. |
+| **Relationship Picker** | Link to rows in another table. |
+| **User Field** / **User List Field** | Reference one or more workspace users. |
+| **Email / URL / Password Fields** | Specialised text input with validation. |
+| **JSON Field** | Structured JSON input. |
+| **Rating Field** | A star-style rating. |
+| **File Upload** | Upload files — see [File uploads](./file-uploads.mdx). |
+
+## Form action type
+
+A form operates in one of three modes:
+
+- **Create** — submits a new row.
+- **Update** — edits an existing row (bound to a selected record).
+- **View** — displays a row read-only.
+
+## Validation
+
+Fields can require a value and enforce rules (such as min/max, length, or pattern).
+Validation runs before submission, and invalid fields show inline errors. Constraints
+defined on the underlying [column](../data/tables-and-columns.mdx#constraints) are
+respected automatically.
+
+## On submit
+
+Configure what happens when the form is submitted using
+[actions](./components.mdx#actions) — for example save the row, show a notification,
+close a side panel, or navigate to another screen.

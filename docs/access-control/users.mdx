@@ -1,0 +1,40 @@
+---
+sidebar_position: 3
+title: Users
+---
+
+# Users
+
+The **Users** section is where you manage the people who can access your workspace and
+the [roles](./roles.mdx) they hold.
+
+## Inviting users
+
+Invite a user by email and assign them a role. Once they accept and set a password,
+they can sign in to the portal and see the apps their role grants access to.
+
+## Assigning roles
+
+Each user has a role in the workspace, which determines what they can access:
+
+- **Admin user** — full access, including managing other users and roles.
+- **Basic user** — access to the apps, screens, and data their role permits.
+- **Custom roles** — any [custom role](./custom-roles.mdx) you've defined.
+
+Change a user's role at any time from the Users section.
+
+## Builders and admins
+
+- **Builders** can use the app builder to create and edit apps.
+- **Instance admins** can manage the whole SuperToolMake instance, including all
+  workspaces and users. The first [admin user](../getting-started/first-login.mdx) you
+  create is an instance admin.
+
+## The Users table
+
+SuperToolMake keeps a special **Users table** in its internal database. This is the one
+table that is managed internally (rather than in an external
+[SQL database](../data/overview.mdx)). You can reference users from your own data using
+the **User** [column type](../data/tables-and-columns.mdx#column-types) and the **User**
+field components, which is useful for things like "assigned to" or "created by"
+relationships.

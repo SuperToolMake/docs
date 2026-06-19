@@ -1,0 +1,31 @@
+---
+sidebar_position: 6
+title: Navigation
+---
+
+# Navigation
+
+Navigation lets end users move between the screens of your app.
+
+## The navigation bar
+
+The app's **Nav Bar** provides a consistent menu across screens. You can configure:
+
+- **Links** — the entries shown in the menu, each pointing to a screen or external URL.
+- **Title and logo** — branding shown in the bar.
+- **Position and style** — where the bar appears and how it looks.
+
+Only links to screens the current user can access (based on their
+[role](../access-control/roles.mdx)) are shown, so the menu adapts to each user.
+
+## Linking between screens
+
+Within a screen, use the **Link** component or a **Button** with a navigation
+[action](./components.mdx#actions) to send users to another screen. You can pass values
+through the URL using [URL parameters](./screens.mdx) and read them with
+[bindings](./bindings.mdx).
+
+## Home screen
+
+Each app has a **home screen** — the screen users land on when they open the app. Set
+it in a screen's settings.

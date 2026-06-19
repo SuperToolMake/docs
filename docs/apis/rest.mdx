@@ -1,0 +1,86 @@
+---
+sidebar_position: 2
+title: REST APIs
+---
+
+# REST APIs
+
+The REST connector lets you call any external HTTP/REST service and turn each request
+into a reusable **query** that you can bind to components in your apps.
+
+A REST integration has two layers:
+
+- **Connection-level configuration** — authentication, base URL, and shared headers
+  or variables that apply to every query.
+- **Query-level configuration** — the method, path, parameters, body, bindings,
+  pagination, and any response transformer for an individual request.
+
+## Creating a REST connection
+
+1. Open the **APIs** section of your workspace.
+2. Select **+** and choose **REST API**.
+3. Give the connection a **display name**.
+4. Set the **Base URL** (for example `https://api.example.com`).
+5. Add any shared headers, URL parameters, or static variables that every query
+   should send.
+6. Save the connection.
+
+## Creating a query
+
+With a connection saved, create a query in the API editor:
+
+1. Choose the **HTTP method** — `GET`, `POST`, `PUT`, `PATCH`, or `DELETE`.
+2. Enter the **endpoint path** (appended to the base URL) or a full URL.
+3. Configure **params**, **headers**, and a **body** as needed.
+4. Select an **authentication** config if the request requires one.
+5. **Send** the request to preview the response and its schema.
+6. **Save** the query so it can be reused.
+
+| Area | What to configure |
+| --- | --- |
+| **Method** | `GET`, `POST`, `PUT`, `PATCH`, `DELETE`. |
+| **URL / Path** | Endpoint path (combined with the base URL) or a full URL. |
+| **Params** | Query-string key/value pairs. Supports bindings. |
+| **Headers** | Request headers. Supports bindings and shared defaults. |
+| **Body** | Payload for write/query requests (JSON, XML, or text). |
+| **Authentication** | The connection auth config to apply to this query. |
+| **Transformer** | Optional JavaScript to reshape the response. |
+
+## Authentication
+
+Authentication is defined at the connection level and selected per query. Supported
+methods include:
+
+- **Basic** — username and password.
+- **Bearer** — a static bearer token.
+- **OAuth 2.0** — token-based auth with automatic refresh.
+
+Define each auth config once on the connection, then choose which one a given query
+should use.
+
+## Bindings
+
+Both connection defaults and individual queries support **bindings**, so requests can
+react to user input and app state. Use binding syntax in params, headers, the URL, or
+the body:
+
+```text
+https://api.example.com/customers/{{ customerId }}
+```
+
+See [Bindings](../apps/bindings.mdx) for the full syntax.
+
+## Pagination
+
+For endpoints that return data in pages, configure pagination on the query so
+SuperToolMake can request additional pages automatically. You map the response fields
+that describe paging (such as a cursor, page number, or total count) so components
+like tables can load more rows on demand.
+
+## Variables and transformers
+
+- **Variables** — define static or dynamic values on a connection and reuse them
+  across queries (for example an API key or tenant ID).
+- **Transformers** — write a small JavaScript function to reshape a raw response into
+  the structure your app expects, before it reaches your components. Re-test the
+  query's schema after editing a transformer.

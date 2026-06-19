@@ -1,0 +1,93 @@
+---
+sidebar_position: 3
+title: Components
+---
+
+# Components
+
+Components are the building blocks of a screen. You add them from the component tree,
+arrange them on the canvas, and configure each one in the right-hand settings panel.
+
+Each component has three tabs in the settings panel:
+
+- **Settings** — what the component does and the data it uses.
+- **Styles** — its appearance (size, spacing, colours, alignment).
+- **Conditions** — rules that show, hide, or update the component based on
+  [bindings](./bindings.mdx).
+
+## Layout
+
+| Component | Purpose |
+| --- | --- |
+| **Container** / **Section** / **Layout** | Group and arrange other components. |
+| **Divider** | A horizontal separator. |
+| **Side Panel** | A slide-out panel, often used for create/edit forms. |
+| **Modal** | A dialog overlay. |
+| **Tag** | A small label or badge. |
+
+## Display
+
+| Component | Purpose |
+| --- | --- |
+| **Headline** / **Paragraph** / **Text** | Display text content. |
+| **Image** / **Background Image** | Display images. |
+| **Icon** | Display an icon. |
+| **Markdown Viewer** | Render Markdown content. |
+| **Embed** | Embed external HTML or an iframe. |
+| **Vertical / Horizontal Card**, **Stat Card** | Display records as cards. |
+
+## Data display
+
+| Component | Purpose |
+| --- | --- |
+| **Data Provider** | Fetch rows from a table, view, or query and pass them to child components. |
+| **Single Row Provider** | Fetch a single row for the components inside it. |
+| **Repeater** | Repeat its child components once per row from a data provider. |
+| **Table** | Display rows in an editable/selectable grid. |
+| **Stacked List**, **Gallery**, **Cards Block** | Alternative ways to lay out collections of rows. |
+| **Row Explorer Block** | A ready-made block for browsing and drilling into rows. |
+
+## Forms and fields
+
+| Component | Purpose |
+| --- | --- |
+| **Form** / **Form Block** | Collect input and write it back to a table — see [Forms](./forms.mdx). |
+| **Multi-step Form Block** | A form split across multiple steps. |
+| **Field Group** | Group related fields together. |
+| **Field components** | Text, Long Form, Number, BigInt, Checkbox, Date Picker, Date Range, Options Picker, Multi-select Picker, Relationship Picker, User / User List, Email, URL, Password, JSON, Rating, and File Upload. |
+
+## Charts
+
+| Component | Purpose |
+| --- | --- |
+| **Bar**, **Line**, **Area**, **Pie**, **Donut**, **Histogram**, **Candlestick** charts | Visualise your data. |
+| **Chart Block** | A pre-configured chart wired to a data source. |
+
+## Navigation and actions
+
+| Component | Purpose |
+| --- | --- |
+| **Button** / **Button group** | Trigger [actions](#actions) such as navigation, saving rows, or opening modals. |
+| **Link** | Navigate to another screen or URL. |
+| **Nav Bar** | The app's navigation menu — see [Navigation](./navigation.mdx). |
+
+## Documents
+
+| Component | Purpose |
+| --- | --- |
+| **PDF Generator** / **PDF Table** | Generate downloadable PDF documents from your data. |
+
+## Blocks
+
+Components ending in **Block** (Form Block, Table Block, Cards Block, Chart Block,
+Repeater Block, Gallery, Row Explorer Block) are higher-level, pre-assembled
+components. They bundle several components together for common patterns so you can add
+a working feature in one step, then customise it.
+
+## Actions
+
+Many components (especially **Buttons** and **Forms**) support **actions** — things
+that happen on an event such as a click or a successful save. Common actions include
+navigating to a screen, saving or deleting a row, running a [query](../apis/rest.mdx),
+opening or closing a modal/side panel, validating a form, and updating
+[state](./bindings.mdx#component-state). You can chain multiple actions together.

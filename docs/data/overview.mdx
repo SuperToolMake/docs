@@ -1,0 +1,49 @@
+---
+sidebar_position: 1
+title: Overview
+---
+
+# SQL tables
+
+The **SQL tables** section is where you connect SQL databases and work with your
+data. You can browse and edit data, define relationships between tables, and write
+SQL queries — all from inside the builder.
+
+![The SQL tables section](/img/screenshots/sql-tables.png)
+
+On the left is the **Sources** panel, which lists each connected database along
+with its tables and any saved SQL queries. The main area shows the data grid for
+the selected table.
+
+## Supported SQL databases
+
+SuperToolMake connects to the following SQL databases:
+
+- **PostgreSQL**
+- **MySQL** (and MariaDB)
+- **Microsoft SQL Server**
+
+To connect a non-SQL datasource (such as MongoDB or Redis) or a REST API, use the
+[APIs](../apis/overview.mdx) section instead.
+
+:::info SuperToolMake works with your existing databases
+Unlike Budibase, SuperToolMake focuses on connecting to **external SQL databases**
+that you already run. Tables are created and managed in your own database, not in an
+internal SuperToolMake database. The internal database is used only for application
+metadata and the special [Users table](../access-control/users.mdx).
+:::
+
+## What you can do with a connected database
+
+Once a database is connected you can:
+
+- **Browse and edit rows** directly in the data grid.
+- **Edit column types** so SuperToolMake interprets your data the way you want.
+- **[Define relationships](./relationships.mdx)** between tables.
+- **[Create views](./views.mdx)** — filtered, sorted, saved perspectives on a table.
+- **[Write SQL queries](./sql-queries.mdx)** for advanced read and write operations.
+- **Import and export** data as CSV.
+- **Control access** to each table and query with [roles](../access-control/roles.mdx).
+- **Generate** screens and apps automatically from a table.
+
+Continue to [Connecting a SQL database](./connecting-sql.mdx) to add your first source.

@@ -1,0 +1,48 @@
+---
+sidebar_position: 1
+title: Roles
+---
+
+# Roles
+
+SuperToolMake uses **role based access control (RBAC)** to decide who can see and do
+what. Every screen, table, view, and query has a minimum role, and every user is
+assigned a role. A user can access a resource only if their role meets or exceeds the
+resource's required role.
+
+## Built-in roles
+
+| Role | Who it applies to |
+| --- | --- |
+| **Public** | Unauthenticated visitors. Use this only for resources you want anyone to access without logging in. |
+| **Basic user** | Any logged-in user. The default role for end users. |
+| **Admin user** | Full access — can do everything within the workspace. |
+
+Builders and instance admins additionally have access to the app builder itself.
+
+## How roles inherit
+
+Roles form an inheritance chain: a higher role inherits all the permissions of the
+roles below it. So an **Admin user** can access everything a **Basic user** can, plus
+more. This means you generally assign the *lowest* role that should be able to access a
+resource, and everyone above it gets access automatically.
+
+![Roles inherit permissions from each other](/img/screenshots/rbac.png)
+
+## Assigning roles to resources
+
+You set the required role on each resource:
+
+- **Screens** — each screen has an access role (shown as a coloured indicator in the
+  screens panel).
+- **Tables, views and queries** — each has a role controlling who can read or run it.
+
+## Assigning roles to users
+
+Each user is given a role in the workspace. See [Users](./users.mdx) for how to invite
+people and assign their roles.
+
+## Custom roles
+
+When the built-in roles aren't enough, create your own — see
+[Custom roles](./custom-roles.mdx).

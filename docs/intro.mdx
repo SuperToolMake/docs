@@ -1,47 +1,57 @@
 ---
 sidebar_position: 1
+slug: /
+title: Introduction
 ---
 
-# Tutorial Intro
+# SuperToolMake
 
-Let's discover **Docusaurus in less than 5 minutes**.
+SuperToolMake is an open source, low-code platform for quickly building forms and
+web apps on top of your own data, with built-in role based access control (RBAC).
 
-## Getting Started
+It is a lightweight fork of [Budibase](https://github.com/Budibase/budibase). If
+you have used Budibase before, most concepts will feel familiar — but SuperToolMake
+deliberately focuses on a smaller, leaner core so that it can run comfortably on a
+1GB box, with a total memory footprint under 0.5GB.
 
-Get started by **creating a new site**.
+## What you can do with SuperToolMake
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+- **Connect your SQL tables** — visualise your data, write SQL queries, and control
+  end-user access. PostgreSQL, MySQL and Microsoft SQL Server are supported.
+- **Connect to APIs and other datasources** — query non-SQL datasources and make
+  requests to external REST APIs.
+- **Build apps and forms** — quickly assemble end-user screens with a drag-and-drop
+  builder, backed by any of your SQL tables or APIs.
+- **Control access** — protect data and screens with built-in roles, or define your
+  own custom roles.
 
-### What you'll need
+## How SuperToolMake is organised
 
-- [Node.js](https://nodejs.org/en/download/) version 20.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+Everything you build lives inside a **workspace**. Within a workspace you'll find
+the following sections, accessible from the left-hand navigation of the builder:
 
-## Generate a new site
+| Section | What it's for |
+| --- | --- |
+| **Apps** | Design end-user apps and screens (the app builder). |
+| **APIs** | Connect to REST APIs and non-SQL datasources (Firestore, MongoDB, Redis, MinIO). |
+| **SQL tables** | Connect SQL databases, browse data, define relationships and write queries. |
+| **Custom roles** | Create and manage roles for fine-grained access control. |
+| **Users** | Invite and manage the people who can access your workspace. |
+| **Settings** | Configure the workspace and publish your apps. |
 
-Generate a new Docusaurus site using the **classic template**.
+## How these docs are structured
 
-The classic template will automatically be added to your project after you run the command:
+- **[Getting started](./getting-started/installation.mdx)** — install, run, and log in
+  to SuperToolMake.
+- **[SQL tables](./data/overview.mdx)** — connect SQL databases and work with your data.
+- **[APIs](./apis/overview.mdx)** — connect REST APIs and other datasources.
+- **[Apps](./apps/overview.mdx)** — design screens, forms, and publish apps.
+- **[Access control](./access-control/roles.mdx)** — roles, custom roles, and users.
+- **[Configuration](./configuration/settings.mdx)** — environment variables and settings.
 
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+:::note Differences from Budibase
+SuperToolMake intentionally **does not** include Automations, Agents (AI), or Plugins.
+It also focuses on connecting **external SQL databases** rather than building tables
+in an internal database. These docs only cover the features that ship with
+SuperToolMake.
+:::

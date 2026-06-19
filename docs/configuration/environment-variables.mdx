@@ -1,0 +1,60 @@
+---
+sidebar_position: 1
+title: Environment variables
+---
+
+# Environment variables
+
+When self-hosting, SuperToolMake is configured with environment variables. The most
+important ones are listed below. Pass them with `--env` when running the container (or
+`docker service update --env ...` for Swarm).
+
+## Core
+
+| Variable | Description |
+| --- | --- |
+| `MAIN_PORT` | The main port the app is served on (e.g. `10000`, used as `localhost:10000`). |
+| `BUDIBASE_ENVIRONMENT` | The environment mode, e.g. `PRODUCTION`. |
+| `SQL_MAX_ROWS` | An optional cap on the number of rows returned by SQL queries. |
+
+## Secrets
+
+These should always be changed from their defaults before going to production.
+
+| Variable | Description |
+| --- | --- |
+| `JWT_SECRET` | Secret used to sign authentication tokens. |
+| `API_ENCRYPTION_KEY` | Key used to encrypt stored secrets (such as datasource credentials). |
+| `INTERNAL_API_KEY` | Key used for internal service-to-service calls. |
+| `MINIO_ACCESS_KEY` / `MINIO_SECRET_KEY` | Credentials for the bundled object store. |
+| `COUCH_DB_USER` / `COUCH_DB_PASSWORD` | Credentials for the internal database. |
+| `REDIS_PASSWORD` | Password for the bundled Redis cache. |
+
+:::warning
+The default values shipped for local use (such as `testsecret` and `budibase`) are
+**not** safe for production. Always set strong, unique secrets when deploying.
+:::
+
+## Bootstrapping an admin user
+
+You can create the first [admin user](../getting-started/first-login.mdx)
+automatically by setting both of these. If they're set, SuperToolMake creates the admin
+on first startup so you don't have to go through the create-admin screen.
+
+| Variable | Description |
+| --- | --- |
+| `BB_ADMIN_USER_EMAIL` | Email for the auto-created admin user. |
+| `BB_ADMIN_USER_PASSWORD` | Password for the auto-created admin user. |
+
+## Internal ports
+
+These rarely need changing — they control the ports of the bundled services inside the
+container.
+
+| Variable | Default | Service |
+| --- | --- | --- |
+| `APP_PORT` | `4002` | Application server |
+| `WORKER_PORT` | `4003` | Worker |
+| `MINIO_PORT` | `4004` | Object store |
+| `COUCH_DB_PORT` | `4005` | Internal database |
+| `REDIS_PORT` | `6379` | Cache |

@@ -1,0 +1,57 @@
+---
+sidebar_position: 2
+title: Connecting a SQL database
+---
+
+# Connecting a SQL database
+
+To bring a SQL database into your workspace, open the **SQL tables** section and add
+a new source.
+
+## Adding a source
+
+1. In the **Sources** panel, select the **+** button.
+2. Choose your database type: **PostgreSQL**, **MySQL**, or **Microsoft SQL Server**.
+3. Fill in the connection configuration and save.
+
+You can add as many sources as you need by repeating the same process.
+
+## Connection settings
+
+The exact fields depend on the database, but you'll typically provide:
+
+| Setting | Description |
+| --- | --- |
+| **Host** | The hostname or IP address of the database server. |
+| **Port** | The port the database listens on (e.g. `5432` for PostgreSQL, `3306` for MySQL, `1433` for SQL Server). |
+| **Database** | The name of the database (or schema) to connect to. |
+| **Username** / **Password** | Credentials with permission to read (and write, if needed) your tables. |
+| **SSL** | Whether to connect over SSL/TLS. Enable this for production databases. |
+
+:::tip Self-hosting and network access
+When self-hosting, your database can live on the same machine as SuperToolMake — it
+just can't be inside the SuperToolMake container itself. Make sure the database is
+reachable from the container (correct host, port, and firewall rules).
+:::
+
+## Fetching tables
+
+After connecting, SuperToolMake reads your database schema and lists the available
+tables in the **Sources** panel. Select a table to view and edit its rows in the
+data grid.
+
+When fetching tables, SuperToolMake maps each external column to one of its internal
+[column types](./tables-and-columns.mdx). You can change how any column is interpreted
+later by editing it.
+
+## Editing the connection
+
+To update a source's connection details, select the source in the **Sources** panel
+and edit its configuration. This is also where you manage authentication and
+connection options.
+
+## Next steps
+
+- [Tables and columns](./tables-and-columns.mdx) — understand and adjust column types.
+- [Relationships](./relationships.mdx) — link tables together.
+- [SQL queries](./sql-queries.mdx) — write custom queries against your database.

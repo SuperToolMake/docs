@@ -1,0 +1,41 @@
+---
+sidebar_position: 4
+title: Relationships
+---
+
+# Relationships
+
+Relationships connect rows in one table to rows in another, so you can model data
+like "a customer has many orders" or "an order belongs to one customer".
+
+## Defining a relationship
+
+From the **SQL tables** section, select **Define relationship** in the table toolbar.
+You'll configure:
+
+- **The two tables** being related.
+- **The relationship type** (see below).
+- **The column names** that hold each side of the relationship.
+
+For SQL databases, relationships are backed by the foreign keys and join structure of
+your database.
+
+## Relationship types
+
+| Type | Example |
+| --- | --- |
+| **One to many** | One customer has many orders; each order has one customer. |
+| **Many to one** | The inverse of one to many. |
+| **Many to many** | A student can take many courses, and a course has many students. |
+
+## Using relationships
+
+Once defined, a relationship appears as a **Relationship** column on the table. In the
+data grid you can pick related rows using the row's primary display value. In
+[apps](../apps/overview.mdx), relationship fields let end users browse and select
+related records, and you can display related data using data providers and repeaters.
+
+:::tip
+Choose a clear [primary display column](./tables-and-columns.mdx#primary-display-column)
+on each table — it's the label shown when selecting related rows.
+:::

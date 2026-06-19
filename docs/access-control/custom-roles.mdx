@@ -1,0 +1,45 @@
+---
+sidebar_position: 2
+title: Custom roles
+---
+
+# Custom roles
+
+When the built-in [roles](./roles.mdx) (Public, Basic user, Admin user) don't capture
+the distinctions you need, you can define **custom roles**. A common example is an
+"Approver" role that sits between a basic user and an admin.
+
+![The Custom roles editor](/img/screenshots/rbac.png)
+
+## The Custom roles editor
+
+Open the **Custom roles** section from the workspace navigation (available to admins).
+Roles are shown as a graph, arranged from lowest access on the left to highest on the
+right, with arrows indicating inheritance.
+
+## Creating a role
+
+1. Select **Add role**.
+2. Give the role a **name**.
+3. Choose where it sits in the inheritance chain — which role it inherits from.
+
+Because roles **inherit permissions from each other**, a custom role automatically
+gains everything the role below it can do, and you layer additional access on top.
+
+In the example above, an **Approver** custom role inherits from **Basic user** and is
+inherited by **Admin user**: approvers can do everything basic users can, admins can
+do everything approvers can.
+
+## Editing and deleting
+
+Select a role in the graph to edit its name and inheritance, or delete it. Use **Auto
+layout** to tidy up the graph, and the zoom controls to navigate larger role
+hierarchies.
+
+## Using custom roles
+
+Once created, a custom role can be:
+
+- Assigned to [users](./users.mdx).
+- Set as the required role on [screens](../apps/screens.mdx), tables, views, and
+  [queries](../data/sql-queries.mdx).
