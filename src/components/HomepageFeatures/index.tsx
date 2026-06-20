@@ -11,7 +11,7 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Build on your own data',
+    title: 'Connect your own data',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
@@ -26,7 +26,7 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         A lean fork of Budibase with a memory footprint under 0.5GB — it runs
-        comfortably on a 1GB box, where other platforms want 6–8GB.
+        comfortably on a 1GB box.
       </>
     ),
   },
