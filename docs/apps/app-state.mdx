@@ -16,8 +16,13 @@ You set state from an [action](./actions.mdx), most commonly the **Update
 State** action on a button or after a form submits. Each state value has a **key** and
 a **value**, and you can either set or delete a key.
 
-For example, a button could set a `showDetails` key to `true`, or store the `id` of a
-selected row in a `selectedId` key.
+For example, the screen below stores the clicked row's id in a state key when a user
+clicks a row in a table, then opens a side panel to edit that record:
+
+<img src="/img/screenshots/app-state-action.png" alt="An Update State action setting a state key to the clicked row's id" width="640" />
+
+Here the **Update State** action sets the `ID_BUbh72Hrja` key to `{{ Clicked row._id }}`,
+and a second action opens the side panel that reads it.
 
 ## Reading state
 
@@ -30,7 +35,10 @@ queries:
 ```
 
 The **State** tab in the component tree shows the state keys currently in use on a
-screen, which makes it easy to see what's available to bind to.
+screen, along with what sets each one and what reads it, which makes it easy to see
+what's available to bind to:
+
+<img src="/img/screenshots/app-state-panel.png" alt="The State tab showing a state variable, what updates it, and what it controls" width="300" />
 
 ## Common uses
 
