@@ -28,12 +28,6 @@ The exact fields depend on the database, but you'll typically provide:
 | **Username** / **Password** | Credentials with permission to read (and write, if needed) your tables. |
 | **SSL** | Whether to connect over SSL/TLS. Enable this for production databases. |
 
-:::tip Self-hosting and network access
-When self-hosting, your database can live on the same machine as SuperToolMake — it
-just can't be inside the SuperToolMake container itself. Make sure the database is
-reachable from the container (correct host, port, and firewall rules).
-:::
-
 ## Fetching tables
 
 After connecting, SuperToolMake reads your database schema and lists the available

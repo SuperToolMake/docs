@@ -35,9 +35,9 @@ docker run -d -t \
 ```
 
 Once the container is running, open [http://localhost:10000/builder](http://localhost:10000/builder)
-and follow [Your first login](./first-login.mdx) to create an admin user.
+and follow [Workspaces](./workspace.mdx) to create an admin user.
 
-:::tip Not using Docker Desktop?
+:::tip[Not using Docker Desktop?]
 You can use [Colima](https://github.com/abiosoft/colima) as a Docker runtime. Run
 `colima start` to spin it up before running the commands above.
 :::
@@ -98,4 +98,5 @@ which triggers a rolling restart of the service. See
 
 SuperToolMake stores its internal data in CouchDB. The volume mounts above
 (`/data` and `/opt/couchdb/data`) ensure your workspaces, apps and users survive
-container restarts and upgrades. Always back up these volumes before upgrading.
+container restarts and upgrades. Upgrading the image should not affect the data in
+these volumes, but it is recommended that you back them up before upgrading.

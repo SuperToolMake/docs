@@ -27,7 +27,7 @@ creating and editing records. When generating, you select one or more data sourc
 choose how rows should be managed.
 
 This is the fastest way to get a working CRUD interface over a
-[SQL table](../data/overview.mdx) or [view](../data/views.mdx).
+[SQL table](../data/overview.mdx).
 
 ## Screen access
 
@@ -43,5 +43,31 @@ Select a screen to configure:
 - Its **URL path**.
 - Its **access role**.
 - Whether it's the app's **home screen**.
-- **URL parameters** — dynamic segments such as `/customers/:id` that you can read with
-  [bindings](./bindings.mdx).
+- **URL parameters** — see below.
+
+## URL parameters
+
+A screen's path can include **URL parameters**: dynamic segments marked with a colon,
+such as `:id` in `/customers/:id`. They let a single screen show different data
+depending on the URL — for example one "customer detail" screen that works for any
+customer.
+
+Define a parameter by adding it to the screen's path:
+
+```text
+/customers/:id
+```
+
+Read the parameter anywhere bindings are accepted using the `URL` binding category:
+
+```text
+{{ URL.id }}
+```
+
+A common pattern is a list-and-detail flow:
+
+1. A list screen shows rows in a Table or Repeater.
+2. A [Link](./components.mdx) or [navigation action](./navigation.mdx#linking-between-screens)
+   sends the user to `/customers/:id`, passing the selected row's id.
+3. The detail screen binds a Data Provider (or Single Row Provider) to `{{ URL.id }}`
+   to fetch and display that specific record.

@@ -14,7 +14,6 @@ important ones are listed below. Pass them with `--env` when running the contain
 | Variable | Description |
 | --- | --- |
 | `MAIN_PORT` | The main port the app is served on (e.g. `10000`, used as `localhost:10000`). |
-| `BUDIBASE_ENVIRONMENT` | The environment mode, e.g. `PRODUCTION`. |
 | `SQL_MAX_ROWS` | An optional cap on the number of rows returned by SQL queries. |
 
 ## Secrets
@@ -37,7 +36,7 @@ The default values shipped for local use (such as `testsecret` and `budibase`) a
 
 ## Bootstrapping an admin user
 
-You can create the first [admin user](../getting-started/first-login.mdx)
+You can create the first [admin user](../getting-started/workspace.mdx#creating-an-admin-user)
 automatically by setting both of these. If they're set, SuperToolMake creates the admin
 on first startup so you don't have to go through the create-admin screen.
 

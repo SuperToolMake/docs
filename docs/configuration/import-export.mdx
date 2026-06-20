@@ -1,0 +1,44 @@
+---
+sidebar_position: 3
+title: Import and export
+---
+
+# Import and export
+
+You can export your workspace to a file and import it again later. This is useful for
+backups, moving between instances, or sharing a workspace with someone else.
+
+Both actions live in the workspace **Settings** section.
+
+## Exporting a workspace
+
+From **Settings**, choose one of:
+
+- **Export latest edited workspace** — exports your current, in-progress version.
+- **Export latest published workspace** — exports the version end users currently see
+  (only available once the workspace has been [published](../apps/publishing.mdx)).
+
+You can optionally **encrypt the export** with a password (at least 12 characters).
+SuperToolMake then downloads the export bundle.
+
+:::warning
+Exports can contain sensitive information such as datasource credentials and secret
+keys. Don't share them publicly, and prefer encrypting any export you intend to move or
+hand to someone else.
+:::
+
+## Importing a workspace
+
+From **Settings**, choose **Import workspace** and select an export bundle. The import
+updates the current workspace with the contents of the bundle (if the export was
+encrypted, you'll be asked for its password).
+
+Remember that SuperToolMake has a [single workspace](../getting-started/workspace.mdx),
+so importing updates that workspace rather than creating a new one.
+
+## Compatibility with Budibase
+
+Because SuperToolMake is a fork of Budibase, its export bundles use a similar format
+and are **compatible to some extent** with Budibase exports. Features that don't exist
+in SuperToolMake — such as Automations, Agents, and Plugins — won't carry over, so
+treat cross-platform imports as best-effort rather than guaranteed.

@@ -1,0 +1,45 @@
+---
+sidebar_position: 9
+title: App state
+---
+
+# App state
+
+**State** is a way to store values in your app at runtime and share them between
+components on a screen, without writing anything to your database. It's a powerful tool
+for making apps dynamic — toggling what's visible, passing a value from one component
+to another, or driving multi-step interactions.
+
+## Setting state
+
+You set state from an [action](./components.mdx#actions), most commonly the **Update
+State** action on a button or after a form submits. Each state value has a **key** and
+a **value**, and you can either set or delete a key.
+
+For example, a button could set a `showDetails` key to `true`, or store the `id` of a
+selected row in a `selectedId` key.
+
+## Reading state
+
+Once set, state is available as a [binding](./bindings.mdx). Reference a key wherever
+bindings are accepted — in component settings, text, [conditions](./components.mdx), or
+queries:
+
+```text
+{{ State.selectedId }}
+```
+
+The **State** tab in the component tree shows the state keys currently in use on a
+screen, which makes it easy to see what's available to bind to.
+
+## Common uses
+
+- **Show/hide components** — set a key on click and use it in a component's conditions.
+- **Pass values between components** — store a selection in one component and read it
+  in another (such as a Data Provider that filters by the stored value).
+- **Drive modals and side panels** — track which record a panel should display.
+
+:::tip
+App state is a SuperToolMake concept inherited from Budibase. For more background and
+patterns, see the [Budibase app state documentation](https://docs.budibase.com/docs/app-state).
+:::

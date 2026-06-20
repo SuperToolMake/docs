@@ -19,6 +19,22 @@ and can be reused throughout your apps.
 Saved queries show up beneath their datasource (for example "Search customers" or
 "Summary") and can be bound to components in your [apps](../apps/overview.mdx).
 
+## Importing database views
+
+SuperToolMake can't create database views, but for **PostgreSQL** and **MySQL**
+datasources it can import the views that already exist in your database and turn them
+into queries.
+
+With the datasource selected, choose **Fetch views**. SuperToolMake reads the views
+defined in your database and lets you pick which ones to sync:
+
+1. Select the views you want to import.
+2. Confirm with **Fetch views**.
+
+Each selected view is imported as a saved SQL query under the datasource, so you can
+bind it to components just like any other query. Re-running **Fetch views** keeps your
+selection in sync with the views in your database.
+
 ## Bindings in queries
 
 Queries can include **bindings** so they react to user input or app state. Use

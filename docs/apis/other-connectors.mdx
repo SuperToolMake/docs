@@ -17,13 +17,36 @@ update documents.
 
 ## MongoDB
 
-Connect to a MongoDB database using a connection string. You can then run queries
-such as find, aggregate, insert, update, and delete against your collections.
+Connect to a MongoDB database using a connection string. The MongoDB connector is the
+most fully-featured of the non-SQL connectors and supports most common collection
+operations.
 
 | Setting | Description |
 | --- | --- |
 | **Connection string** | The MongoDB URI, including host, credentials and options. |
 | **Database** | The database to query. |
+
+### Building a query
+
+Each MongoDB query targets a **collection** and a **query type**, then takes the
+relevant arguments (filter, document(s), update, options) as JSON. The available query
+types are:
+
+| Category | Operations |
+| --- | --- |
+| **Read** | `find`, `findOne`, `findOneAndUpdate`, `count`, `distinct` |
+| **Create** | `insertOne`, `insertMany` |
+| **Update** | `updateOne`, `updateMany` |
+| **Delete** | `deleteOne`, `deleteMany` |
+| **Aggregate** | aggregation pipelines (`json` or `pipeline`) |
+
+Arguments are written as JSON and support [bindings](../apps/bindings.mdx), so a query
+can filter or update documents based on user input or app state. For example, a `find`
+query might use a filter like:
+
+```json
+{ "status": "active", "owner": {{ Current User._id }} }
+```
 
 ## Redis
 

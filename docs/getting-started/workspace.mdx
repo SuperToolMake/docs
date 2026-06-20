@@ -1,0 +1,60 @@
+---
+sidebar_position: 2
+title: Workspaces
+---
+
+# Workspaces
+
+A **workspace** is the container for everything you build in SuperToolMake: your data
+connections, your apps, your roles, and your users.
+
+SuperToolMake has a **single workspace**. It is created automatically the first time
+you start the instance, and you land directly in it after logging in — there is no
+workspace switcher and you don't create workspaces yourself.
+
+## Creating an admin user
+
+The very first time you open the builder you'll be prompted to create an admin user.
+The admin user has full access to the instance.
+
+Open the builder at [`localhost:10000/builder`](http://localhost:10000/builder)
+(replace `localhost:10000` with your own host and port if you've changed them), then:
+
+<img src="/img/screenshots/super_admin.png" alt="Create an admin user" width="480" />
+
+Enter an email address and a password, confirm the password, then select
+**Create admin user**. You'll be logged in and taken straight into the workspace.
+
+:::warning
+Keep these credentials safe — the admin account can manage every user and role in
+your instance.
+:::
+
+:::tip
+You can skip this screen entirely by [bootstrapping the admin user](../configuration/environment-variables.mdx#bootstrapping-an-admin-user)
+with environment variables.
+:::
+
+## What's in a workspace
+
+Once you're in, the left-hand navigation gives you access to everything in the
+workspace:
+
+- **[Apps](../apps/overview.mdx)** — design end-user apps and screens.
+- **[SQL tables](../data/overview.mdx)** and **[APIs](../apis/overview.mdx)** — connect
+  and work with your data.
+- **[Access control](../access-control/roles.mdx)** — roles and users.
+- **[Settings](../configuration/settings.mdx)** — configure the workspace and publish
+  your apps.
+
+## Next steps
+
+A typical first run through the workspace looks like this:
+
+1. **[Connect a SQL database](../data/connecting-sql.mdx)** or
+   **[an API](../apis/overview.mdx)** to bring in your data.
+2. **[Design an app](../apps/overview.mdx)** with screens and forms.
+3. **[Set up access control](../access-control/roles.mdx)** for your end users.
+4. **[Publish](../apps/publishing.mdx)** your app so end users can use it.
+
+Continue to [SQL tables](../data/overview.mdx) to connect your first datasource.

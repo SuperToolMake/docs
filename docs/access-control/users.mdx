@@ -1,34 +1,39 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 title: Users
 ---
 
 # Users
 
-The **Users** section is where you manage the people who can access your workspace and
-the [roles](./roles.mdx) they hold.
+The **Users** section is where you manage the people who can access SuperToolMake and
+the access they have.
 
 ## Inviting users
 
-Invite a user by email and assign them a role. Once they accept and set a password,
-they can sign in to the portal and see the apps their role grants access to.
+Invite a user by email and choose their access level. Once they accept and set a
+password, they can sign in and see what their access allows.
 
-## Assigning roles
+## Tenant access levels
 
-Each user has a role in the workspace, which determines what they can access:
+Every user has a tenant-level access level that determines what they can do across the
+instance:
 
-- **Admin user** — full access, including managing other users and roles.
-- **Basic user** — access to the apps, screens, and data their role permits.
-- **Custom roles** — any [custom role](./custom-roles.mdx) you've defined.
+| Access level | What it allows |
+| --- | --- |
+| **Organisation admin** | Can change settings and manage users across the instance. |
+| **Creator** | Builder access — can create and edit everything within the workspace, including apps, data, and roles. |
+| **End user** | No builder access. Can only access published apps. |
 
-Change a user's role at any time from the Users section.
+The first admin user you create when
+[setting up the instance](../getting-started/workspace.mdx#creating-an-admin-user) is an
+organisation admin.
 
-## Builders and admins
+## App roles
 
-- **Builders** can use the app builder to create and edit apps.
-- **Instance admins** can manage the whole SuperToolMake instance, including all
-  workspaces and users. The first [admin user](../getting-started/first-login.mdx) you
-  create is an instance admin.
+Tenant access levels control whether someone can use the builder. Within a **published
+app**, an end user's [app role](./roles.mdx) determines which screens and data they can
+see. You assign each end user an app role (Public, Basic, Admin, or a custom role) and
+can change it at any time from the Users section.
 
 ## The Users table
 

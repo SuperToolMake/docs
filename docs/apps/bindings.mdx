@@ -6,8 +6,8 @@ title: Bindings
 # Bindings
 
 **Bindings** make your app dynamic. They let you insert live values — data from a row,
-input from a user, or shared app state — into component settings, text, queries, and
-conditions.
+input from a user, or shared [app state](./app-state.mdx) — into component settings,
+text, queries, and conditions.
 
 ## Binding syntax
 
@@ -20,6 +20,19 @@ Hello {{ Current User.firstName }}
 Wherever you see the binding icon (a small lightning bolt) next to a setting, you can
 open the binding panel to browse the available values and insert them.
 
+### JavaScript bindings
+
+Bindings can also be **JavaScript**. For anything beyond inserting a single value —
+combining fields, formatting, conditional logic, or other value transformations —
+switch the binding to JavaScript and return the value you want:
+
+```js
+return `${$("Current User.firstName")} ${$("Current User.lastName")}`
+```
+
+JavaScript bindings have access to the same readable values as text bindings via the
+`$("...")` helper, and run in a secure sandbox.
+
 ## What you can bind to
 
 | Source | Examples |
@@ -28,23 +41,10 @@ open the binding panel to browse the available values and insert them.
 | **Current user** | The logged-in user's email, name, role, and other attributes. |
 | **URL parameters** | Dynamic segments of the screen's path, such as `:id`. |
 | **Query/datasource results** | Values returned by a [SQL query](../data/sql-queries.mdx) or [API](../apis/rest.mdx). |
-| **Component state** | Custom values you set and read across components. |
+| **App state** | Custom values you set and read across components — see [App state](./app-state.mdx). |
 
 ## Using bindings in data
 
 Bindings also work inside [SQL queries](../data/sql-queries.mdx) and
 [API requests](../apis/rest.mdx), so a query can react to user input — for example
 filtering by a search box or by the currently selected row.
-
-## Component state
-
-**State** is a way to share values between components on a screen without writing them
-to the database. One component (such as a button) sets a state value via an
-[action](./components.mdx#actions), and other components read it through a binding. The
-**State** tab in the component tree shows the state values currently in use.
-
-## Transformers and JavaScript
-
-For advanced cases you can compute values with JavaScript — for example reshaping an
-[API response](../apis/rest.mdx#variables-and-transformers) with a transformer, or
-deriving a display value from several fields.
