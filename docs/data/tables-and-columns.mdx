@@ -1,0 +1,60 @@
+---
+sidebar_position: 3
+title: Tables and columns
+---
+
+# Tables and columns
+
+Each table you connect appears in the **Sources** panel. Selecting a table opens its
+data grid, where rows are shown as records and columns as fields.
+
+## Working with the data grid
+
+From the data grid you can:
+
+- **Add, edit and delete rows** inline.
+- **Add a column** with the **+** button at the end of the header row.
+- **Edit a column** — select the menu beside a column header and choose **Edit column**
+  to change its name, type, or constraints.
+- **Sort, filter and resize** columns.
+- **Import** rows from a CSV file, or **Export** the current data.
+
+## Column types
+
+SuperToolMake assigns each column a type, which controls how values are stored,
+validated, displayed, and edited in forms. When you fetch tables from a SQL database,
+column types are inferred from the database schema; you can override them by editing
+the column.
+
+| Type | Description |
+| --- | --- |
+| **Text** | A single line of text. |
+| **Long form text** | Multi-line text, ideal for descriptions and notes. |
+| **Options** | A single choice from a predefined list of values. |
+| **Multi-select** | One or more choices from a predefined list. |
+| **Number** | A numeric value. |
+| **BigInt** | A large integer that exceeds the normal number range. |
+| **Boolean** | A true/false value. |
+| **Date/Time** | A date, time, or timestamp. |
+| **JSON** | Structured JSON data. |
+| **Relationship** | A link to rows in another table — see [Relationships](./relationships.mdx). |
+| **User** | A reference to one or more workspace users. |
+| **Auto column** | An automatically generated value (such as an auto ID or created/updated metadata). |
+
+## Constraints
+
+Depending on the type, you can add constraints to a column, for example:
+
+- **Required** — the field must have a value.
+- **Allowed values** — restrict an Options or Multi-select column to a fixed list.
+- **Min / max** — bound numeric or text length values.
+
+Constraints are enforced when editing rows in the grid and when end users submit
+[forms](../apps/forms.mdx).
+
+## Primary display column
+
+Each table has a **primary display** column. This is the value SuperToolMake uses to
+represent a row wherever a single label is needed — for example in relationship
+pickers and search results. Choose a column that uniquely and meaningfully identifies
+each row (such as a name or title).

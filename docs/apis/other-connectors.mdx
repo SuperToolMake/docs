@@ -1,0 +1,98 @@
+---
+sidebar_position: 3
+title: Other connectors
+---
+
+# Other connectors
+
+Besides REST APIs, the **APIs** section can connect to several non-SQL datasources.
+Each is configured with its connection details, after which you build queries that
+your apps can use.
+
+## Firestore
+
+Connect to Google Cloud Firestore to read and write documents in your collections.
+Provide your project credentials, then create queries to fetch, filter, create, and
+update documents.
+
+## MongoDB
+
+Connect to a MongoDB database using a connection string. The MongoDB connector is the
+most fully-featured of the non-SQL connectors and supports most common collection
+operations.
+
+| Setting | Description |
+| --- | --- |
+| **Connection string** | The MongoDB URI, including host, credentials and options. |
+| **Database** | The database to query. |
+
+### Building a query
+
+Each MongoDB query targets a **collection** and a **query type**, then takes the
+relevant arguments (filter, document(s), update, options) as JSON. The available query
+types are:
+
+| Category | Operations |
+| --- | --- |
+| **Read** | `find`, `findOne`, `findOneAndUpdate`, `count`, `distinct` |
+| **Create** | `insertOne`, `insertMany` |
+| **Update** | `updateOne`, `updateMany` |
+| **Delete** | `deleteOne`, `deleteMany` |
+| **Aggregate** | aggregation pipelines (`json` or `pipeline`) |
+
+Arguments are written as JSON and support [bindings](../apps/bindings.mdx). Bindings
+in a query are **placeholders** that are filled in later from the app — you define them
+in the query's **Data** section and supply their values in the **Design** section.
+
+For example, in the **Data** section a `find` filter might reference an `owner`
+binding:
+
+```json
+{ "status": "active", "owner": {{ owner }} }
+```
+
+You then declare the `owner` binding (with an optional default value) alongside the
+query:
+
+| Binding | Default value |
+| --- | --- |
+| `owner` | _(optional)_ |
+
+When you bind this query to a component in the **Design** section, you map `owner` to a
+value that only exists in the app context — such as the logged-in end user:
+
+```text
+{{ Current User._id }}
+```
+
+This separation keeps the query reusable while still letting it filter or update
+documents based on user input or app state.
+
+## Redis
+
+Connect to a Redis instance to use it as a fast key/value store or cache. Configure
+the host, port, and password, then create queries that run Redis commands.
+
+| Setting | Description |
+| --- | --- |
+| **Host** / **Port** | The Redis server address. |
+| **Password** | The Redis auth password, if set. |
+
+## MinIO
+
+[MinIO](https://min.io/) is an S3-compatible object store. Connect it to read and
+write objects in buckets. MinIO also powers the
+[file upload component](../apps/file-uploads.mdx), letting end users upload files
+directly to a bucket from your apps.
+
+| Setting | Description |
+| --- | --- |
+| **Endpoint** | The MinIO server URL. |
+| **Access key** / **Secret key** | Credentials for the bucket. |
+| **Region** | The bucket region, if applicable. |
+
+## Using queries
+
+Like REST queries, queries against these connectors can include
+[bindings](../apps/bindings.mdx) so they respond to user input and app state, and each
+query can be protected with a [role](../access-control/roles.mdx).

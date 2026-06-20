@@ -1,0 +1,61 @@
+---
+sidebar_position: 6
+title: SQL queries
+---
+
+# SQL queries
+
+For anything beyond browsing and editing rows, you can write **SQL queries** against
+a connected database. Queries appear under their datasource in the **Sources** panel
+and can be reused throughout your apps.
+
+## Creating a query
+
+1. Select a SQL datasource in the **Sources** panel.
+2. Create a new query.
+3. Write your SQL statement.
+4. Run it to preview the results, then save it.
+
+Saved queries show up beneath their datasource (for example "Search customers" or
+"Summary") and can be bound to components in your [apps](../apps/overview.mdx).
+
+## Importing database views
+
+SuperToolMake can't create database views, but for **PostgreSQL** and **MySQL**
+datasources it can import the views that already exist in your database and turn them
+into queries.
+
+With the datasource selected, choose **Fetch views**. SuperToolMake reads the views
+defined in your database and lets you pick which ones to sync:
+
+1. Select the views you want to import.
+2. Confirm with **Fetch views**.
+
+Each selected view is imported as a saved SQL query under the datasource, so you can
+bind it to components just like any other query. Re-running **Fetch views** keeps your
+selection in sync with the views in your database.
+
+## Bindings in queries
+
+Queries can include **bindings** so they react to user input or app state. Use
+binding syntax to inject values, for example a search term entered by the user or the
+ID of the currently selected row.
+
+```sql
+SELECT * FROM customers
+WHERE status = {{ status }}
+ORDER BY signup_date DESC
+```
+
+See [Bindings](../apps/bindings.mdx) for the full binding syntax.
+
+## Read and write queries
+
+Queries can both read data (e.g. `SELECT`) and modify it (e.g. `INSERT`, `UPDATE`,
+`DELETE`). Be careful to protect write queries with appropriate
+[roles](../access-control/roles.mdx) so only the right users can run them.
+
+## Access control
+
+Like tables, each query has an access role. Set the minimum role required to run a
+query so that sensitive operations are restricted to trusted users.

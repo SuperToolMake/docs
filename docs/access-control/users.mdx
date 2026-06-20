@@ -1,0 +1,45 @@
+---
+sidebar_position: 2
+title: Users
+---
+
+# Users
+
+The **Users** section is where you manage the people who can access SuperToolMake and
+the access they have.
+
+## Inviting users
+
+Invite a user by email and choose their access level. Once they accept and set a
+password, they can sign in and see what their access allows.
+
+## Tenant access levels
+
+Every user has a tenant-level access level that determines what they can do across the
+instance:
+
+| Access level | What it allows |
+| --- | --- |
+| **Organisation admin** | Can change settings and manage users across the instance. |
+| **Creator** | Builder access — can create and edit everything within the workspace, including apps, data, and roles. |
+| **End user** | No builder access. Can only access published apps. |
+
+The first admin user you create when
+[setting up the instance](../getting-started/workspace.mdx#creating-an-admin-user) is an
+organisation admin.
+
+## App roles
+
+Tenant access levels control whether someone can use the builder. Within a **published
+app**, an end user's [app role](./roles.mdx) determines which screens and data they can
+see. You assign each end user an app role (Public, Basic, Admin, or a custom role) and
+can change it at any time from the Users section.
+
+## The Users table
+
+SuperToolMake keeps a special **Users table** in its internal database. This is the one
+table that is managed internally (rather than in an external
+[SQL database](../data/overview.mdx)). You can reference users from your own data using
+the **User** [column type](../data/tables-and-columns.mdx#column-types) and the **User**
+field components, which is useful for things like "assigned to" or "created by"
+relationships.

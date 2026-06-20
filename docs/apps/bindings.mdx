@@ -1,0 +1,58 @@
+---
+sidebar_position: 8
+title: Bindings
+---
+
+# Bindings
+
+**Bindings** make your app dynamic. They let you insert live values — data from a row,
+input from a user, or shared [app state](./app-state.mdx) — into component settings,
+text, queries, and conditions.
+
+## Binding syntax
+
+Bindings use double curly braces:
+
+```text
+Hello {{ Current User.firstName }}
+```
+
+Wherever you see the binding icon (a small lightning bolt) next to a setting, you can
+open the binding panel to browse the available values and insert them.
+
+### JavaScript bindings
+
+Bindings can also be **JavaScript**, which is ideal for more complex value
+transformations that handlebars can't express — iterating over a list, reshaping data,
+or applying conditional logic. Switch the binding to JavaScript and `return` the value
+you want. Readable values are available through the `$("...")` helper, and the code
+runs in a secure sandbox.
+
+For example, this binding takes the files from a file upload field and returns an
+object whose `images` array maps each one to its compressed `.avif` key:
+
+```js
+return {
+  images: $("[New File Upload].Value").map(img => img.key + ".avif")
+}
+```
+
+For simple cases like joining two fields, prefer a plain handlebars binding such as
+`{{ Current User.firstName }} {{ Current User.lastName }}` — JavaScript is only worth
+reaching for when the transformation is genuinely beyond handlebars.
+
+## What you can bind to
+
+| Source | Examples |
+| --- | --- |
+| **Component data** | The current row in a Repeater or Data Provider, a selected table row, a form's values. |
+| **Current user** | The logged-in user's email, name, role, and other attributes. |
+| **URL parameters** | Dynamic segments of the screen's path, such as `:id`. |
+| **Query/datasource results** | Values returned by a [SQL query](../data/sql-queries.mdx) or [API](../apis/rest.mdx). |
+| **App state** | Custom values you set and read across components — see [App state](./app-state.mdx). |
+
+## Using bindings in data
+
+Bindings also work inside [SQL queries](../data/sql-queries.mdx) and
+[API requests](../apis/rest.mdx), so a query can react to user input — for example
+filtering by a search box or by the currently selected row.
