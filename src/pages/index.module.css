@@ -4,6 +4,8 @@
  */
 
 .heroBanner {
+  --mouse-x: 50%;
+  --mouse-y: 50%;
   padding: 5rem 0 4rem;
   text-align: center;
   position: relative;
@@ -29,6 +31,20 @@
   font-weight: 700;
   letter-spacing: -0.02em;
   margin-bottom: 0.5rem;
+}
+
+.shimmerTitle {
+  background: radial-gradient(
+    circle at var(--mouse-x) var(--mouse-y),
+    #ffffff 0%,
+    #e8e8e8 25%,
+    #d0d0d0 50%,
+    #e8e8e8 75%,
+    #ffffff 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .heroBanner .hero__subtitle {
