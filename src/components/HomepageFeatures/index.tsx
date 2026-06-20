@@ -65,6 +65,7 @@ export default function HomepageFeatures(): ReactNode {
             <Feature key={idx} {...props} />
           ))}
         </div>
+        <p className={styles.openSource}>Free and open source software</p>
       </div>
     </section>
   );

@@ -9,3 +9,10 @@
   height: 200px;
   width: 200px;
 }
+
+.openSource {
+  text-align: center;
+  margin-top: 2rem;
+  opacity: 0.6;
+  font-size: 0.9rem;
+}

@@ -104,7 +104,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} SuperToolMake. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Mel O'Hagan.`,
     },
     prism: {
       theme: prismThemes.github,
