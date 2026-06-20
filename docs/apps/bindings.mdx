@@ -22,16 +22,24 @@ open the binding panel to browse the available values and insert them.
 
 ### JavaScript bindings
 
-Bindings can also be **JavaScript**. For anything beyond inserting a single value —
-combining fields, formatting, conditional logic, or other value transformations —
-switch the binding to JavaScript and return the value you want:
+Bindings can also be **JavaScript**, which is ideal for more complex value
+transformations that handlebars can't express — iterating over a list, reshaping data,
+or applying conditional logic. Switch the binding to JavaScript and `return` the value
+you want. Readable values are available through the `$("...")` helper, and the code
+runs in a secure sandbox.
+
+For example, this binding takes the files from a file upload field and returns an
+object whose `images` array maps each one to its compressed `.avif` key:
 
 ```js
-return `${$("Current User.firstName")} ${$("Current User.lastName")}`
+return {
+  images: $("[New File Upload].Value").map(img => img.key + ".avif")
+}
 ```
 
-JavaScript bindings have access to the same readable values as text bindings via the
-`$("...")` helper, and run in a secure sandbox.
+For simple cases like joining two fields, prefer a plain handlebars binding such as
+`{{ Current User.firstName }} {{ Current User.lastName }}` — JavaScript is only worth
+reaching for when the transformation is genuinely beyond handlebars.
 
 ## What you can bind to
 

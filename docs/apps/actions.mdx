@@ -1,0 +1,77 @@
+---
+sidebar_position: 9
+title: Actions
+---
+
+# Actions
+
+**Actions** are what make components interactive. Many components — most commonly
+**Buttons** and **Forms** — let you attach actions to an event, such as a click or a
+successful form submission. When the event fires, SuperToolMake runs the actions in
+order.
+
+You configure actions in the action editor: pick an event, then add one or more
+actions to a list. Because the list runs top to bottom you can **chain** actions
+together — for example, save a row, show a notification, then navigate to another
+screen. Most action settings accept [bindings](./bindings.mdx), so an action can use
+values from the current row, the logged-in user, or [app state](./app-state.mdx).
+
+## Data actions
+
+- **Save Row** — create or update a row in a table or datasource. The saved row is
+  available to later actions in the chain.
+- **Duplicate Row** — copy an existing row into a new one.
+- **Delete Rows** — delete one or more rows.
+- **Fetch Row** — load a single row by id so later actions can use its values.
+- **Execute Query** — run a saved [SQL query](../data/sql-queries.mdx) or
+  [API request](../apis/rest.mdx); the result is available to later actions.
+- **Refresh Data Provider** — re-fetch the data behind a Data Provider, table, or
+  block so the screen reflects the latest values.
+- **Clear Row Selection** — deselect the currently selected rows in a table.
+- **Update State** — set or delete an [app state](./app-state.mdx) key, the main way
+  to drive dynamic behaviour on a screen.
+- **Upload File to Bucket** — upload a file to a connected
+  [MinIO/S3 bucket](./file-uploads.mdx).
+- **Export Data** — export rows (for example from a table) to a downloadable file.
+- **Download File** — download a file in the user's browser.
+- **Copy to Clipboard** — copy a value to the user's clipboard.
+
+## Form actions
+
+- **Validate Form** — run validation on a form and stop the chain if it fails.
+- **Update Field Value** — set the value of a field in a form.
+- **Clear Form** — reset a form's fields.
+- **Change Form Step** — move between steps of a multi-step form.
+- **Scroll to Field** — scroll the screen to a particular field, useful for surfacing
+  validation errors.
+
+## Navigation and UI actions
+
+- **Navigate To** — go to another screen or external URL, optionally passing
+  [URL parameters](./screens.mdx#url-parameters).
+- **Open Side Panel** / **Close Side Panel** — show or hide a
+  [side panel](./components.mdx), often used for create/edit forms.
+- **Open Modal** / **Close Modal** — show or hide a modal dialog.
+- **Close Screen Modal** — close a screen that is being displayed as a modal.
+- **Show Notification** — display a toast message to the user.
+- **Prompt User** — show a confirmation prompt before continuing, handy in front of a
+  destructive action such as Delete Rows.
+- **Log Out** — sign the current user out of the app.
+
+## Logic actions
+
+Logic actions let you control which of the remaining actions in the chain run.
+
+### IF / ELSE
+
+The **IF / ELSE** action block branches the chain on a condition. You provide a
+condition (typically a [binding](./bindings.mdx)) and define the actions to run when it
+is **true** and, optionally, when it is **false**. This lets a single button behave
+differently depending on the data or app state — for example, saving a new row when no
+record is selected but updating the existing one when there is.
+
+### Continue if / Stop if
+
+The **Continue if / Stop if** action evaluates a condition and either continues running
+the rest of the chain or stops it. It is a lightweight way to guard later actions
+without nesting them inside an IF / ELSE block.

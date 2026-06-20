@@ -1,5 +1,5 @@
 ---
-sidebar_position: 9
+sidebar_position: 10
 title: App state
 ---
 
@@ -12,7 +12,7 @@ to another, or driving multi-step interactions.
 
 ## Setting state
 
-You set state from an [action](./components.mdx#actions), most commonly the **Update
+You set state from an [action](./actions.mdx), most commonly the **Update
 State** action on a button or after a form submits. Each state value has a **key** and
 a **value**, and you can either set or delete a key.
 
@@ -38,8 +38,3 @@ screen, which makes it easy to see what's available to bind to.
 - **Pass values between components** — store a selection in one component and read it
   in another (such as a Data Provider that filters by the stored value).
 - **Drive modals and side panels** — track which record a panel should display.
-
-:::tip
-App state is a SuperToolMake concept inherited from Budibase. For more background and
-patterns, see the [Budibase app state documentation](https://docs.budibase.com/docs/app-state).
-:::
