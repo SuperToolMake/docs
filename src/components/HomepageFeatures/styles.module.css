@@ -16,6 +16,11 @@
   font-size: 0.8rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  color: var(--ifm-color-primary-darkest);
+  opacity: 0.5;
+}
+
+:global([data-theme='dark']) .openSource {
   color: var(--ifm-color-primary-light);
   opacity: 0.6;
 }
