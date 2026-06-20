@@ -12,7 +12,7 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: 'Connect your own data',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/illustration-connect.svg').default,
     description: (
       <>
         Connect PostgreSQL, MySQL or SQL Server, plus REST APIs and other
@@ -22,7 +22,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Lightweight by design',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/illustration-lightweight.svg').default,
     description: (
       <>
         A lean fork of Budibase with a memory footprint under 0.5GB — it runs
@@ -32,7 +32,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Access control built in',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/illustration-access.svg').default,
     description: (
       <>
         Protect every screen, table and query with role based access control,

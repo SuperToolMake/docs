@@ -101,6 +101,10 @@ const config: Config = {
               label: 'GitHub',
               href: 'https://github.com/SuperToolMake/supertoolmake',
             },
+            {
+              label: 'Illustrations by unDraw',
+              href: 'https://undraw.co',
+            },
           ],
         },
       ],
