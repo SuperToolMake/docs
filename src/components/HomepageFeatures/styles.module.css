@@ -12,7 +12,10 @@
 
 .openSource {
   text-align: center;
-  margin-top: 2rem;
-  opacity: 0.6;
-  font-size: 0.9rem;
+  margin-top: 2.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ifm-color-primary-darkest);
+  opacity: 0.5;
 }
